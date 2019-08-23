@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindowClass</class>
+ <widget class="QMainWindow" name="mainWindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1445</width>
+    <height>790</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1445</width>
+    <height>790</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1445</width>
+    <height>790</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>CustomGIVE</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLineEdit" name="leItemID">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>321</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="tbCommand">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>530</y>
+      <width>841</width>
+      <height>221</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="gbEnch">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>561</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Enchantments</string>
+    </property>
+    <widget class="QTableView" name="tbvEnch">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>411</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustIgnored</enum>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+    </widget>
+    <widget class="QPushButton" name="btnAdd">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>270</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnDel">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>320</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gbDisplay">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>100</y>
+      <width>841</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Display</string>
+    </property>
+    <widget class="QTextEdit" name="teItemLore">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>541</width>
+       <height>301</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="leItemName">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbItemName">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>131</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Item Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbLore">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>30</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Lore</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn0">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§0</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn1">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>120</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§1</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn2">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>120</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§2</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn3">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>120</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn4">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>120</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§4</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn5">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>120</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§6</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn7">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>160</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§7</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn8">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>160</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§8</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn9">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>160</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§9</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_a">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>160</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§a</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_b">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>160</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§b</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_c">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§c</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_d">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>200</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§d</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_f">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>200</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§f</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_k">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>260</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§k</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_l">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>260</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§l</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_m">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>260</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§m</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_n">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>260</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§n</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_o">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>260</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§o</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_r">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>320</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>§r</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbColor">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Color</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbFormat">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>240</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Format</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbDefault">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>300</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Default</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnDisTip">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>320</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>!</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gbHideFlag">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>0</y>
+      <width>841</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>HideFlag</string>
+    </property>
+    <widget class="QCheckBox" name="chbSelectAll">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SeletAll</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chbEnch">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enchantment</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chbAttri">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>60</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Attributes</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chbUnbreak_hf">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>60</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Unbreakable</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chbCanDes">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>60</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>CanDestroy</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chbCanPlace">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>60</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>CanPlaceOn</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chbOthers">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>60</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Others</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbPS_Others">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>40</y>
+       <width>231</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
+       <stylestrategy>PreferDefault</stylestrategy>
+      </font>
+     </property>
+     <property name="text">
+      <string>*Potion effects &amp; shield pattern info</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="lbItemID">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ItemID</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="gbVersion">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>0</y>
+      <width>221</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Version</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>161</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="rbtn12minus">
+        <property name="text">
+         <string>1.8 - 1.12</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rbtn13plus">
+        <property name="text">
+         <string>1.13 +</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btnGenerate">
+    <property name="geometry">
+     <rect>
+      <x>1260</x>
+      <y>480</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Generate</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnInfo">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>20</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID Info</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spbAmount">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>490</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>64</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbAmount">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>470</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Item Amount</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chbUnbreakable">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>490</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Unbreakable</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="gbAttri">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>460</y>
+      <width>561</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Attributes Editor</string>
+    </property>
+    <widget class="QTableView" name="tableView">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>411</width>
+       <height>251</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnAdd_2">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>200</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnDel_2">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>250</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btnCopy">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>490</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Copy</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1445</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOtherNBT">
+    <property name="title">
+     <string>OtherNBT</string>
+    </property>
+    <addaction name="actionComing_Soon"/>
+   </widget>
+   <widget class="QMenu" name="menuLanguage">
+    <property name="title">
+     <string>Language</string>
+    </property>
+    <addaction name="actionEng"/>
+    <addaction name="actionCNs"/>
+   </widget>
+   <widget class="QMenu" name="menuMoreInfo">
+    <property name="title">
+     <string>MoreInfo</string>
+    </property>
+    <addaction name="actionNBT_Wiki"/>
+    <addaction name="separator"/>
+    <addaction name="actionAboutQt"/>
+    <addaction name="actionAboutMinecraft"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionSign_Transcoder"/>
+    <addaction name="actionUpgradeCommand"/>
+   </widget>
+   <addaction name="menuOtherNBT"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuLanguage"/>
+   <addaction name="menuMoreInfo"/>
+  </widget>
+  <action name="actionEng">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionCNs">
+   <property name="text">
+    <string>简体中文</string>
+   </property>
+  </action>
+  <action name="actionNBT_Wiki">
+   <property name="text">
+    <string>NBT Wiki</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionAboutMinecraft">
+   <property name="text">
+    <string>About Minecraft</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About...</string>
+   </property>
+  </action>
+  <action name="actionComing_Soon">
+   <property name="text">
+    <string>Coming Soon...</string>
+   </property>
+  </action>
+  <action name="actionSign_Transcoder">
+   <property name="text">
+    <string>Sign Transcoder</string>
+   </property>
+  </action>
+  <action name="actionUpgradeCommand">
+   <property name="text">
+    <string>Upgrade Your Command!</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>leItemID</tabstop>
+  <tabstop>btnInfo</tabstop>
+  <tabstop>rbtn12minus</tabstop>
+  <tabstop>rbtn13plus</tabstop>
+  <tabstop>tbvEnch</tabstop>
+  <tabstop>btnAdd</tabstop>
+  <tabstop>btnDel</tabstop>
+  <tabstop>tableView</tabstop>
+  <tabstop>btnAdd_2</tabstop>
+  <tabstop>btnDel_2</tabstop>
+  <tabstop>chbSelectAll</tabstop>
+  <tabstop>chbEnch</tabstop>
+  <tabstop>chbAttri</tabstop>
+  <tabstop>chbUnbreak_hf</tabstop>
+  <tabstop>chbCanDes</tabstop>
+  <tabstop>chbCanPlace</tabstop>
+  <tabstop>chbOthers</tabstop>
+  <tabstop>leItemName</tabstop>
+  <tabstop>teItemLore</tabstop>
+  <tabstop>btn0</tabstop>
+  <tabstop>btn1</tabstop>
+  <tabstop>btn2</tabstop>
+  <tabstop>btn3</tabstop>
+  <tabstop>btn4</tabstop>
+  <tabstop>btn5</tabstop>
+  <tabstop>btn6</tabstop>
+  <tabstop>btn7</tabstop>
+  <tabstop>btn8</tabstop>
+  <tabstop>btn9</tabstop>
+  <tabstop>btn_a</tabstop>
+  <tabstop>btn_b</tabstop>
+  <tabstop>btn_c</tabstop>
+  <tabstop>btn_d</tabstop>
+  <tabstop>btn_f</tabstop>
+  <tabstop>btn_k</tabstop>
+  <tabstop>btn_l</tabstop>
+  <tabstop>btn_m</tabstop>
+  <tabstop>btn_n</tabstop>
+  <tabstop>btn_o</tabstop>
+  <tabstop>btn_r</tabstop>
+  <tabstop>spbAmount</tabstop>
+  <tabstop>chbUnbreakable</tabstop>
+  <tabstop>btnCopy</tabstop>
+  <tabstop>btnGenerate</tabstop>
+  <tabstop>tbCommand</tabstop>
+ </tabstops>
+ <resources>
+  <include location="mainWindow.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnCopy</sender>
+   <signal>clicked()</signal>
+   <receiver>tbCommand</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1180</x>
+     <y>546</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1278</x>
+     <y>604</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
