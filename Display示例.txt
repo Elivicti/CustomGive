@@ -1,0 +1,34 @@
+
+
+
+
+{display:{
+Lore:[
+§0Lore0,      //黑色
+§1Lore1,      //蓝色
+§2Lore2,      //绿色
+§3Lore3,      //青色
+§4Lore4,      //红色
+§5Lore5,      //品红色
+§6Lore6,      //金色
+§7Lore8,      //浅灰色
+§8Lore8,      //灰色
+§9Lore9,      //蓝紫色
+§aLore10,     //浅绿色
+§bLore11,     //浅蓝色
+§cLore12,     //浅红色
+§dLore13,     //粉色
+§fLore14,     //白色
+
+§kLore15,     //乱码
+§lLore16,     //加粗
+§mLore17,     //删除线
+§nLore18,     //下划线
+§oLore19,     //斜体
+§rLore20,     //默认字体颜色（即不附魔不改名时物品名称的样式）
+Lore21        //不加任何前缀修饰字体，默认为紫色斜体（注：仅加入修饰字体的前缀时，颜色默认为紫色）
+],
+Name:testname}}
+§
+
+{display:{Lore:[§0Lore1,§1Lore2,§2Lore3,§3Lore4,§4Lore5,§6Lore6,§7Lore7,§8Lore8,§9Lore9,§aLore10,§bLore11,§cLore12,§dLore13,§fLore14,§kLore15,§lLore16,§mLore17,§nLore18,§oLore19,§rLore20,Lore21],Name:testname}}
