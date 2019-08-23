@@ -7,5 +7,13 @@
 然而实际上用cpp去写基于Java的Minecraft的指令的过程着实令人蛋疼...
 
 
-# CustomGive
-Used for generating "/give" command in minecraft
+Custom "/give" command in Minecraft
+=====================================
+Used for generating "/give" command in minecraft.<br>
+Feel painful when writing command with tons of NBT tags?<br>
+Be annoyed by countless "{}" ?<br>
+This program can solve the problem.<br> 
+Don't need knowledge of command to use it.<br>
+
+------------------------------------
+It's such a pain to write Minecraft commands(based on Java) with cpp, though...
