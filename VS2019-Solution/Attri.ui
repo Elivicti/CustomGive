@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Attri</class>
+ <widget class="QDialog" name="Attri">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>485</width>
+    <height>360</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>485</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>485</width>
+    <height>360</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Add Attribute</string>
+  </property>
+  <widget class="QLabel" name="lbItmID">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>20</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>(ItemID)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbITEM">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="text">
+    <string>Item:</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="gbAttriEditor">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>450</width>
+     <height>230</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Attribute Editor</string>
+   </property>
+   <widget class="QComboBox" name="cbbAttriName">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>220</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Attack Damage</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Attack Speed</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Armor</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Armor Toughness</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Luck</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Reach Distance</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Flying Speed</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Max Health</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mob Follow Range</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Knockback Resistance</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Movement Speed</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="cbbAttriSlot">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>50</y>
+      <width>131</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>MainHand</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>OffHand</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Head</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Chest</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Legs</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Feet</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="lbAttriName">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Attribute Name</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbSlot">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>30</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Slot</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="gbNumValue">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>410</width>
+      <height>115</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Numerical Value</string>
+    </property>
+    <widget class="QLabel" name="lbAmount">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>25</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Amount</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbtnAddi">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>28</y>
+       <width>151</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Additive</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rbtnMulti">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>60</y>
+       <width>161</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>multiplicative</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chbInfinity">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Infinity</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="dspbAmount">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>151</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <double>-32767.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>32767.000000000000000</double>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btnAddAttri">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>320</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCancel">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>320</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>310</y>
+     <width>411</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>cbbAttriName</tabstop>
+  <tabstop>cbbAttriSlot</tabstop>
+  <tabstop>rbtnAddi</tabstop>
+  <tabstop>rbtnMulti</tabstop>
+  <tabstop>btnAddAttri</tabstop>
+  <tabstop>btnCancel</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btnCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>Attri</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>415</x>
+     <y>323</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>302</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
