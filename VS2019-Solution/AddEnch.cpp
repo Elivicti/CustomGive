@@ -12,7 +12,7 @@ AddEnch::AddEnch(QWidget *parent)
 
 }
 
-void AddEnch::setLanCNs()
+void AddEnch::setLanCNs()//简体中文
 {
 	this->setWindowTitle(SETCN("添加附魔"));
 
@@ -61,8 +61,7 @@ void AddEnch::setLanCNs()
 	ui.cbbEnchantments->setItemText(35, SETCN("穿透(1.14+)"));
 	ui.cbbEnchantments->setItemText(36, SETCN("快速装填(1.14+)"));
 }
-
-void AddEnch::setLanUS()
+void AddEnch::setLanUS()//英文
 {
 	this->setWindowTitle("AddEnchantment");
 
@@ -112,16 +111,13 @@ void AddEnch::setLanUS()
 	ui.cbbEnchantments->setItemText(36, "Quick Charge(1.14+)");
 }
 
-AddEnch::~AddEnch()
-{
-}
 
-void AddEnch::EnchAdd()
+void AddEnch::EnchAdd() //添加附魔
 {
-	NBTstr::EnchIndex = ui.cbbEnchantments->currentIndex();
-	NBTstr::Enchlvl = ui.spbLvl->value();
-	NBTstr::EnchShow = ui.cbbEnchantments->currentText();
+	NBTstr::EnchIndex = ui.cbbEnchantments->currentIndex();  //获取附魔索引
+	NBTstr::Enchlvl = ui.spbLvl->value();                    //获取附魔的等级
+	NBTstr::EnchShow = ui.cbbEnchantments->currentText();    //获取用于显示的附魔名称
 
-	this->accept();
+	this->accept();//让.exec()返回1
 }
 

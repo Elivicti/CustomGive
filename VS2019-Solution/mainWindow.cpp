@@ -1,15 +1,14 @@
 #include "mainWindow.h"
 #include "Enchantments.h"
 
-
-
+//ÓÃÓÚmainWindow::setTableHeader(QString str)º¯Êý£¬ÉèÖÃ±íÍ·
 #define ENCH "Enchantment"
 #define ATTRI "Attribute"
 
-int crtLang = ENGUS;
-int AttriUUID = 0;
+int crtLang = ENGUS;    //´¢´æµ±Ç°ÓïÑÔ×´Ì¬
+int AttriUUID = 0;      //ÓÃÓÚÉèÖÃAttributeµÄUUID
 
-void mainWindow::debug()
+void mainWindow::debug() //µ÷ÊÔÓÃ
 {
 	this->ui.teItemLore->textCursor().insertText("123");
 }
@@ -66,7 +65,7 @@ mainWindow::mainWindow(QWidget *parent)
 	connect(ui.btnAddAttri, SIGNAL(clicked()), this, SLOT(AddAttri()));
 	connect(ui.btnDelAttri, SIGNAL(clicked()), this, SLOT(DelAttri()));
 
-	//Òþ²ØÊôÐÔ
+	//Òþ²ØNBT±êÇ©ÏÔÊ¾
 	connect(ui.chbSelectAll, SIGNAL(clicked()), this, SLOT(hfAll()));
 	connect(ui.chbEnch, SIGNAL(clicked()), this, SLOT(hfEnch()));
 	connect(ui.chbAttri, SIGNAL(clicked()), this, SLOT(hfAttri()));
@@ -75,7 +74,7 @@ mainWindow::mainWindow(QWidget *parent)
 	connect(ui.chbCanPlace, SIGNAL(clicked()), this, SLOT(hfCanPlace()));
 	connect(ui.chbOthers, SIGNAL(clicked()), this, SLOT(hfOthers()));
 
-
+	//Éú³É
 	connect(ui.btnGenerate, SIGNAL(clicked()), this, SLOT(Generate()));
 
 
@@ -112,12 +111,12 @@ mainWindow::mainWindow(QWidget *parent)
 
 void mainWindow::setTableHeader(QString str)
 {
-	if (str == "Enchantment")
+	if (str == "Enchantment")  //±£³Ö±íÍ·µÄ¸ñÊ½£¨²»³öÏÖºáÏòµÄ¹ö¶¯£© ¸½Ä§±í¸ñ
 	{
-		if (row >= 8)  //±£³Ö±íÍ·µÄ¸ñÊ½£¨²»³öÏÖºáÏòµÄ¹ö¶¯£© ¸½Ä§±í¸ñ
+		if (row >= 8)
 		{
-			ui.tbvEnch->setColumnWidth(0, 270);
-			ui.tbvEnch->setColumnWidth(1, 118);
+			ui.tbvEnch->setColumnWidth(0, 270);  //¸½Ä§
+			ui.tbvEnch->setColumnWidth(1, 118);  //µÈ¼¶
 		}
 		else
 		{
@@ -125,14 +124,14 @@ void mainWindow::setTableHeader(QString str)
 			ui.tbvEnch->setColumnWidth(1, 139);
 		}
 	}
-	else if (str == "Attribute")
+	else if (str == "Attribute")  //±£³Ö±íÍ·µÄ¸ñÊ½£¨²»³öÏÖºáÏòµÄ¹ö¶¯£© Attribute±í¸ñ
 	{
 		if (AttriNum > 5)
 		{
-			ui.tbvAttri->setColumnWidth(0, 138);
-			ui.tbvAttri->setColumnWidth(1, 60);
-			ui.tbvAttri->setColumnWidth(2, 95);
-			ui.tbvAttri->setColumnWidth(3, 95);
+			ui.tbvAttri->setColumnWidth(0, 138);  //Ãû³Æ
+			ui.tbvAttri->setColumnWidth(1, 60);   //²ÛÎ»
+			ui.tbvAttri->setColumnWidth(2, 95);   //ÊýÖµ
+			ui.tbvAttri->setColumnWidth(3, 95);   //¼ÆËã·½Ê½
 		}
 		else
 		{
@@ -230,7 +229,7 @@ void mainWindow::AddLore_r()//Ä¬ÈÏ×ÖÌåÑÕÉ«£¨¼´²»¸½Ä§²»¸ÄÃûÊ±ÎïÆ·Ãû³ÆµÄÑùÊ½£©
 	this->ui.teItemLore->textCursor().insertText(ui.btn_r->text());
 }
 
-void mainWindow::DisTip()
+void mainWindow::DisTip()//¹ØÓÚÑùÊ½´úÂëµÄÌáÊ¾
 {
 	if (crtLang == CNSIMP)
 	{
@@ -252,19 +251,22 @@ void mainWindow::DisTip()
 
 }
 
-void mainWindow::getDis()
+void mainWindow::getDis()//»ñÈ¡Display±êÇ©
 {
 	QString disName = ui.leItemName->text();
 	QString disLore = ui.teItemLore->toPlainText();
-	disLore.replace("\n", "\",\"");
+	disLore.replace("\n", "\",\"");  //°ÑQStringÖÐµÄ»»ÐÐÌæ»»ÎªÖ¸ÁîÖÐÓÃµÄ»»ÐÐ
 	
+	//ÅÐ¶ÏName±êÇ©ºÍLore±êÇ©ÊÇ·ñÎª¿Õ
 	if (disName != "" && disLore == "")
 	{
 		NBTstr::disNbt = ",display:{Name:\"" + disName + "\"}";
+
 	} 
 	else if (disLore != "" && disName == "")
 	{
 		NBTstr::disNbt = ",display:{Lore: [\"" + disLore + "\"]}";
+
 	}
 	else if (disLore == "" && disName == "")
 	{
@@ -273,47 +275,45 @@ void mainWindow::getDis()
 	else
 	{
 		NBTstr::disNbt = ",display:{Name:\"" + disName + "\"" + ",Lore: [\"" + disLore + "\"]}";
+
 	}
 	
 }
 
 
 //¸½Ä§
-void mainWindow::AddEnchant()
+void mainWindow::AddEnchant()//Ìí¼Ó¸½Ä§
 {
-	ItemID = ui.leItemID->text();
-
 	AddEnch a;
-	a.setId(ItemID);
-	if (crtLang == CNSIMP)
+	a.setId(ui.leItemID->text()); //ÉèÖÃÌí¼Ó½çÃæµÄItemIDÏÔÊ¾
+
+	if (crtLang == CNSIMP)//ÉèÖÃÓïÑÔ
 	{
 		a.setLanCNs();
 	}
-	else// if (crtLang == ENGUS)
+	else
 	{
 		a.setLanUS();
 	}
 
-	int ext = a.exec();
-
-	if (ext == 0) //ÅÐ¶Ï¡°Ìí¼Ó¸½Ä§¡±´°¿ÚµÄ·µ»Ø×´Ì¬£¬Îª0£¨µã¡°X¡±»òCancel£©ÔòÌø³ö
+	if (a.exec() == 0) //ÅÐ¶Ï¡°Ìí¼Ó¸½Ä§¡±´°¿ÚµÄ·µ»Ø×´Ì¬£¬Îª0£¨µã¡°X¡±»òCancel£©ÔòÌø³ö
 	{
 		return;
 	}
-
 	
-	NBTstr::EnchStr = setEnch(NBTstr::EnchIndex);
+	NBTstr::EnchStr = setEnch(NBTstr::EnchIndex);  //°ÑÌí¼Ó¸½Ä§´°¿ÚµÄµÃµ½µÄ¸½Ä§Ë÷Òý×ª»»Îª¶ÔÓ¦¸½Ä§µÄQStringÀàÐÍ
 	setEnchNBT();
 	
+	//ÉèÖÃ±í¸ñ
 	this->model_Ench->setItem(row, 0, new QStandardItem(NBTstr::EnchShow));
 	this->model_Ench->setItem(row, 1, new QStandardItem(QString::number(NBTstr::Enchlvl)));
-
 	row++;
+
 	setTableHeader(ENCH);
 
 }
 
-void mainWindow::DelEnchant()
+void mainWindow::DelEnchant()//É¾³ý¸½Ä§
 {
 	if (row > 0)
 	{
@@ -394,36 +394,57 @@ void mainWindow::setEnchNBT(bool ifDel)  //Æ´½Ó¸½Ä§NBT×Ö·û´®£¨Ä©Î²µÄ¡°]¡±²»ÔÚ´Ëº
 
 
 //ÊôÐÔ±à¼­Æ÷
-void mainWindow::AddAttri()
+void mainWindow::AddAttri() //Ìí¼ÓAttribute
 {
 	Attri a;
-	a.setLang(crtLang);
-	a.setItemID(ui.leItemID->text());
-	if (a.exec() == 1)
+	a.setLang(crtLang);                //ÉèÖÃÓïÑÔ
+	a.setItemID(ui.leItemID->text());  //ÉèÖÃItemIDÏÔÊ¾
+
+	if (a.exec() == 1) //ÅÐ¶ÏÌí¼Ó´°¿ÚµÄ·µ»ØÖµ
 	{
+		//ÉèÖÃµ¥ÌõAttribute±êÇ©µÄQStringÀàÐÍ
 		NBTstr::AttriStr = Attri::SetAttriStr(AttriUUID);
 		AttriUUID++;
+
+		//ÉèÖÃ±í¸ñ
 		this->model_Attri->setItem(AttriNum, 0, new QStandardItem(NBTstr::AttriNameShow));
 		this->model_Attri->setItem(AttriNum, 1, new QStandardItem(NBTstr::AttriSlotShow));
 		this->model_Attri->setItem(AttriNum, 2, new QStandardItem(NBTstr::AttriAmount));
-		if (NBTstr::AttriOperation == "0")
+		if (NBTstr::AttriOperation == "0")  //ÅÐ¶ÏOperation(¼ÆËã·½Ê½)
 		{
-			this->model_Attri->setItem(AttriNum, 3, new QStandardItem("Additive"));
+			//¼ÓËã
+			if (crtLang == ENGUS)
+			{
+				this->model_Attri->setItem(AttriNum, 3, new QStandardItem("Additive"));
+			}
+			else
+			{
+				this->model_Attri->setItem(AttriNum, 3, new QStandardItem(SETCN("¼ÓËã")));
+			}
+			
 		}
 		else if (NBTstr::AttriOperation == "1")
 		{
-			this->model_Attri->setItem(AttriNum, 3, new QStandardItem("Multiplicative"));
+			//³ËËã
+			if (crtLang == ENGUS)
+			{
+				this->model_Attri->setItem(AttriNum, 3, new QStandardItem("Multiplicative"));
+			}
+			else
+			{
+				this->model_Attri->setItem(AttriNum, 3, new QStandardItem(SETCN("³ËËã")));
+			}
 		}
 		
 		setAttriNBT();
 
 		AttriNum++;
-		setTableHeader(ATTRI);
 
+		setTableHeader(ATTRI);
 	}
 }
 
-void mainWindow::DelAttri()
+void mainWindow::DelAttri()//É¾³ýAttribute
 {
 	if (AttriNum > 0)
 	{
@@ -437,9 +458,9 @@ void mainWindow::DelAttri()
 	
 }
 
-void mainWindow::setAttriNBT(bool ifDel)
+void mainWindow::setAttriNBT(bool ifDel)//ÉèÖÃAttributeµÄNBT(Æ´½ÓAttributeµÄ×Ö·û´®)
 {
-	if (ifDel == false)
+	if (ifDel == false)//Ìí¼Ó
 	{
 		if (AttriNum > 0)
 		{
@@ -447,15 +468,16 @@ void mainWindow::setAttriNBT(bool ifDel)
 		}
 		NBTstr::AttriNBT += NBTstr::AttriStr;
 	}
-	else if (ifDel == true)
+	else if (ifDel == true)//É¾³ý
 	{
-		if (AttriNum <= 1)
+		if (AttriNum <= 1)//AttributeÊýÁ¿Ö»ÓÐ1¸ö
 		{
 			NBTstr::AttriNBT = "";
 		}
 		else
 		{
-			if (crtRow == 0)
+			//É¾³ýÔ­Àí£ºAttribute±êÇ©µÄÃ¿Ò»ÏîÊôÐÔ£¬¶¼Ö»ÔÚÒ»¶Ô"{}"Àï
+			if (crtRow == 0)//É¾³ýµÚÒ»ÐÐ
 			{
 				for (int i = 0; i < NBTstr::AttriNBT.size(); i++)
 				{			
@@ -468,16 +490,16 @@ void mainWindow::setAttriNBT(bool ifDel)
 					NBTstr::AttriNBT[i] = '\0';
 				}
 			}
-			else if (crtRow > 0)
+			else if (crtRow > 0)//É¾³ýµÚ¶þÐÐ+
 			{
 				int n = 0;
 				for (int i = 0; i < NBTstr::AttriNBT.size(); i++)
 				{
 					if (NBTstr::AttriNBT[i] == "{")
 					{
-						n++;
+						n++;//¼ÆÊý£¬µ±Ç°ÊÇµÚ¼¸¸ö"{"
 					}
-					if (n == crtRow + 1)
+					if (n == crtRow + 1)//crtRow´Ó0¿ªÊ¼¼ÆÊý£¬¶øn´Ó1¿ªÊ¼¼ÆÊý
 					{
 						for (int j = i; j < NBTstr::AttriNBT.size(); j++)
 						{
@@ -486,21 +508,24 @@ void mainWindow::setAttriNBT(bool ifDel)
 							{
 								NBTstr::AttriNBT[j - 1] = '\0';
 								NBTstr::AttriNBT[j] = '\0';
-								break;
+								break; //Ìø³ö
 							}
 						
 						}
-						break;
+						break; //Ìø³ö
 					}
 				}
+
 			}
 		}
+
 	}
+
 }
 
 
-//Òþ²ØÊôÐÔ
-void mainWindow::hfAll()
+//Òþ²ØNBT±êÇ©ÏÔÊ¾
+void mainWindow::hfAll()//ËùÓÐ±êÇ©
 {
 	if (ui.chbSelectAll->isChecked() == true)
 	{
@@ -523,7 +548,7 @@ void mainWindow::hfAll()
 		ui.chbOthers->setChecked(false);
 	}
 }
-void mainWindow::hfEnch()
+void mainWindow::hfEnch()//¸½Ä§
 {
 	if (ui.chbEnch->isChecked() == true)
 	{
@@ -543,7 +568,7 @@ void mainWindow::hfEnch()
 		ui.chbSelectAll->setChecked(false);
 	}
 }
-void mainWindow::hfAttri()
+void mainWindow::hfAttri()//Attribute
 {
 	if (ui.chbAttri->isChecked() == true)
 	{
@@ -563,7 +588,7 @@ void mainWindow::hfAttri()
 		ui.chbSelectAll->setChecked(false);
 	}
 }
-void mainWindow::hfUnbreak()
+void mainWindow::hfUnbreak()//ÎÞ·¨ÆÆ»µ
 {
 	if (ui.chbUnbreak_hf->isChecked() == true)
 	{
@@ -583,7 +608,7 @@ void mainWindow::hfUnbreak()
 		ui.chbSelectAll->setChecked(false);
 	}
 }
-void mainWindow::hfCanDes()
+void mainWindow::hfCanDes()//¿ÉÒÔÆÆ»µ
 {
 	if (ui.chbCanDes->isChecked() == true)
 	{
@@ -603,7 +628,7 @@ void mainWindow::hfCanDes()
 		ui.chbSelectAll->setChecked(false);
 	}
 }
-void mainWindow::hfCanPlace()
+void mainWindow::hfCanPlace()//¿ÉÒÔ·ÅÖÃÔÚ
 {
 	if (ui.chbCanPlace->isChecked() == true)
 	{
@@ -623,7 +648,7 @@ void mainWindow::hfCanPlace()
 		ui.chbSelectAll->setChecked(false);
 	}
 }
-void mainWindow::hfOthers()
+void mainWindow::hfOthers()//ÆäËü
 {
 	if (ui.chbOthers->isChecked() == true)
 	{
@@ -646,66 +671,61 @@ void mainWindow::hfOthers()
 
 
 //×îÖÕÊä³ö
-void mainWindow::setNBT()
+void mainWindow::setNBT()//ÉèÖÃÍêÕûµÄNBT
 {
-	if (ui.rbtn13plus->isChecked() == true && NBTstr::EnchNBT != "")
+	if (ui.rbtn13plus->isChecked() == true && NBTstr::EnchNBT != "")//ÅÐ¶ÏÓÃ»§Ñ¡ÔñµÄ°æ±¾
 	{
-		for (int i = 0; i < NBTstr::EnchNBT.size(); i++)
-		{
-			if (NBTstr::EnchNBT[i] == "{")
-			{
-				break;
-			}
-			NBTstr::EnchNBT[i] = '\0';
-		}
+		//µ±ÖØÐÂÉú³ÉÖ¸ÁîÊ±£¬¸½Ä§NBTµÄÇ°×ºÐèÒª±»Çå³ý
+		NBTstr::EnchNBT.replace("Enchantments:[", "");
+		NBTstr::EnchNBT.replace("]", "");
+
 		EnchSwitchForm(&NBTstr::EnchNBT);
 		NBTstr::EnchNBT = "Enchantments:[" + NBTstr::EnchNBT + "]";
 	}
-	else if(ui.rbtn13plus->isChecked() == false && NBTstr::EnchNBT != "")
+	else if(ui.rbtn13plus->isChecked() == false && NBTstr::EnchNBT != "")//ÅÐ¶ÏÓÃ»§Ñ¡ÔñµÄ°æ±¾
 	{
-		for (int i = 0; i < NBTstr::EnchNBT.size(); i++)
-		{
-			if (NBTstr::EnchNBT[i] == "{")
-			{
-				break;
-			}
-			NBTstr::EnchNBT[i] = '\0';
-		}
+		//µ±ÖØÐÂÉú³ÉÖ¸ÁîÊ±£¬¸½Ä§NBTµÄÇ°×ºÐèÒª±»Çå³ý
+		NBTstr::EnchNBT.replace("ench:[", "");
+		NBTstr::EnchNBT.replace("]", "");
+
 		EnchSwitchForm(&NBTstr::EnchNBT, true);
 		NBTstr::EnchNBT = "ench:[" + NBTstr::EnchNBT + "]";
 	}
 
-	if (NBTstr::AttriNBT != "")
+	if (NBTstr::AttriNBT != "")//Æ´½ÓAttributeµÄNBT
 	{
+		//µ±ÖØÐÂÉú³ÉÖ¸ÁîÊ±£¬AttributeµÄNBTµÄÇ°×ºÐèÒª±»Çå³ý
+		NBTstr::AttriNBT.replace(",AttributeModifiers:[", "");
+		NBTstr::AttriNBT.replace("]", "");
+
 		NBTstr::AttriNBT = ",AttributeModifiers:[" + NBTstr::AttriNBT + "]";
 	}
 
+	//Éú³ÉUnbreakable±êÇ©
 	QString isUnbreakable = "";
 	if (ui.chbUnbreakable->isChecked() == true)
 	{
 		isUnbreakable = ",Unbreakable:1b";
 	}
-	else
-	{
-		isUnbreakable = "";
-	}
 
+	//Éú³ÉHideFlag±êÇ©
 	QString HideFlagStr = "";
 	if (HideFlag != NULL)
 	{
 		HideFlagStr = ",HideFlag:" + QString::number(HideFlag);
 	}
 
-	getDis();
+	getDis(); //»ñÈ¡display±êÇ©
 
+	//Æ´½ÓÍêÕûµÄNBT
 	NBTstr::NBTfull = "{" + NBTstr::EnchNBT + isUnbreakable + HideFlagStr + NBTstr::disNbt + NBTstr::AttriNBT + "}";
-	NBTstr::NBTfull.replace("{,", "{");
+	NBTstr::NBTfull.replace("{,", "{");  //µ±Ê×Î»(¸½Ä§)Îª¿ÕÊ±£¬ÆäËü±êÇ©Ç°×Ô´øÒ»¸ö","£¬ÐèÒªÇå³ýÊ×Î»µÄ","
 }
 
 void mainWindow::Generate()
 {
 
-	Command = COMDPREF;
+	Command = COMDPREF; //Ìí¼ÓÖ¸ÁîÇ°×º
 
 	if (ui.leItemID->text() == "") //ÅÐ¶ÏÊÇ·ñÒÑÊäÈëÎïÆ·ID
 	{
@@ -713,31 +733,35 @@ void mainWindow::Generate()
 		return;
 	}
 
-	amount = ui.spbAmount->value();
-	ItemID = ui.leItemID->text();
+	amount = ui.spbAmount->value();  //»ñÈ¡ÎïÆ·ÊýÁ¿
+	ItemID = ui.leItemID->text();    //»ñÈ¡ÎïÆ·ID
 
-	setNBT();
-	if (NBTstr::NBTfull == "{}")
+	setNBT();  //ÉèÖÃNBT
+	if (NBTstr::NBTfull == "{}")//Èç¹ûNBTfull == "{}"£¬ËµÃ÷²¢Ã»ÓÐÈÎºÎNBT±êÇ©±»¼ÓÈë
 	{
 		NBTstr::NBTfull = "";
 	}
 
-	if (ui.rbtn13plus->isChecked() == true)
+	//ÅÐ¶ÏÓÃ»§Ñ¡ÔñµÄ°æ±¾
+	if (ui.rbtn13plus->isChecked() == true) //1.13+
 	{
 		Command += IDPREF + ItemID + NBTstr::NBTfull + " " + QString::number(amount);
 	}
-	else 
+	else //1.12¼°ÒÔÏÂ
 	{
 		Command += IDPREF + ItemID + " " + QString::number(amount) + " 0" + " " + NBTstr::NBTfull;
 	}
 	
-	ui.tbCommand->setText(Command);
+	ui.tbCommand->setText(Command); //Êä³ö
 }
 
 
 
 void mainWindow::ColorFix()
 {
+	/*****************************/
+	/*          Î´Íê³É           */
+	/****************************/
 	SignTranscode a;
 	a.exec();
 }

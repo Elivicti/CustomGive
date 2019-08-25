@@ -202,7 +202,7 @@ QString setEnch(int ench__) //把enum中的值转化为相应的QString类型的附魔名称
 	}
 }
 
-void EnchSwitchForm(QString* ench_, bool isUnder12 = false)
+void EnchSwitchForm(QString* ench_, bool isUnder12 = false) //替换附魔的ID，1.12及以下是数字ID，1.13+是英文ID
 {
 	if (isUnder12 == true)
 	{
@@ -301,7 +301,7 @@ void EnchSwitchForm(QString* ench_, bool isUnder12 = false)
 	*穿透        piercing
 	*快速装填    quick_charge
 	*
-	*此三项附魔没有数字编号
+	*此三项附魔没有数字ID
 	*
 	************************/
 }

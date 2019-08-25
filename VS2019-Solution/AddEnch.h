@@ -11,21 +11,19 @@ class AddEnch : public QDialog
 public:
 	AddEnch(QWidget *parent = Q_NULLPTR);
 
+	//设置ItemID的显示
 	void setId(QString _ID)
 	{
 		ui.lbItmID->setText(_ID);
 	}
 
-
+	//设置语言
 	void setLanCNs();
 	void setLanUS();
 
-	~AddEnch();
 
 private slots:
-	void EnchAdd();
-
-
+	void EnchAdd(); //添加附魔
 
 private:
 	Ui::AddEnch ui;

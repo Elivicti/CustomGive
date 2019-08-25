@@ -36,25 +36,17 @@ class mainWindow : public QMainWindow
 
 public:
 	mainWindow(QWidget *parent = Q_NULLPTR);
-
-	
-
-	void setTableHeader(QString str);
-
-	int crtRow;
-
-	
 	
 private slots:
 	//菜单
-	void _aboutQt();
-	void aboutMC();
-	void _about();
-	void NBTwiki();
-	void IDinfo();
-	void commandUpgrade();
+	void _aboutQt();        //关于Qt
+	void aboutMC();         //关于Minecraft
+	void _about();          //关于
+	void NBTwiki();         //NBT的wiki页面
+	void IDinfo();          //物品ID的相关信息
+	void commandUpgrade();  //升级指令(一个非常好用的小工具，来自Github)
 
-	void ColorFix();     //修复样式代码
+	void ColorFix();        //修复样式代码
 
 	//附魔
 	void AddEnchant();
@@ -64,7 +56,6 @@ private slots:
 	void AddAttri();
 	void DelAttri();
 	
-
 	//display标签
 	void AddLore0();      //黑色
 	void AddLore1();      //蓝色
@@ -87,9 +78,9 @@ private slots:
 	void AddLore_n();     //下划线
 	void AddLore_o();     //斜体
 	void AddLore_r();     //默认字体颜色（即不附魔不改名时物品名称的样式）
-	void DisTip();
-	void getDis();
+	void DisTip();        //关于样式代码的提示
 
+	//隐藏NBT标签显示
 	void hfAll();
 	void hfEnch();
 	void hfAttri();
@@ -98,35 +89,43 @@ private slots:
 	void hfCanPlace();
 	void hfOthers();
 
-
+	//总生成
 	void setNBT();
 	void Generate();
 
+	//设置语言
 	void changeLanUS();
 	void changeLanCNs();
 
 private:
 
-	void debug();
+	void debug();           //调试用
 
+	void setTableHeader(QString str);   //设置表头，参数用于判断设置附魔或Attribute的表头
 
-	int HideFlag = NULL;  //存储NBT HideFlag的值，默认为0
-	int amount = 1;       //存储物品数量，默认为1
-
-	QString ItemID;
-
-	QString Command = COMDPREF;
-
-	QStandardItemModel* model_Ench;
-	QStandardItemModel* model_Attri;
-	Ui::mainWindowClass ui;
-	
-
+	int crtRow;             //当前用户选中的表格的第几行
 	int row = 0;            //表格行数（第row行）
+	int amount = 1;         //存储物品数量，默认为1
+
+
+	int HideFlag = NULL;    //存储NBT HideFlag的值，默认为0
+
+	void getDis();          //获取Display
+
+	//附魔
 	int EnchNum = 0;        //用于mainWindow::setEnchNBT()函数，判断当前附魔数量
 	void setEnchNBT(bool ifDel = false);
 
+	//Attribute
 	int AttriNum = 0;       //记录Attribute的数量
 	void setAttriNBT(bool ifDel = false);
-	
+
+	QString ItemID;                //物品ID
+	QString Command = COMDPREF;    //最终输出的指令
+
+
+	QStandardItemModel* model_Ench;   //tableView的model - 附魔
+	QStandardItemModel* model_Attri;  //tableView的model - Attribute
+
+	Ui::mainWindowClass ui;		
 };
